@@ -6,7 +6,7 @@ export default function InformationsForm() {
     <Container>
       <p>Idade</p>
       <InputContent>
-        <Input placeholder="21" />
+        <Input placeholder="36" />
         <small>anos</small>
       </InputContent>
 
@@ -18,7 +18,7 @@ export default function InformationsForm() {
 
       <p>Peso</p>
       <InputContent>
-        <Input placeholder="69" />
+        <Input placeholder="73" />
         <small>kg</small>
       </InputContent>
     </Container>

@@ -2,7 +2,7 @@ import styled from 'styled-components'
 import { darken, transparentize } from 'polished'
 
 export const Container = styled.section`
-  margin-top: 5px;
+  margin-top: 0.5rem;
 
   & p {
     font-weight: 400;
@@ -31,10 +31,21 @@ export const RadioBoxContainer = styled.div`
   button {
     padding: 8px 10px;
     width: 100%;
+    border: 1px solid #d7d7d7;
+    cursor: pointer;
+    transition: border-color 0.2s;
+
+    &:hover {
+      border-color: ${darken(0.12, '#d7d7d7')};
+    }
+  }
+
+  button:last-child {
+    padding: 8px 10px;
+    width: 100%;
     border-radius: 0 0.25rem 0.25rem 0;
     border: 1px solid #d7d7d7;
     cursor: pointer;
-
     transition: border-color 0.2s;
 
     &:hover {

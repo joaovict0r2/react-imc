@@ -1,8 +1,9 @@
-import React, { useState } from 'react'
+import React from 'react'
+import { useCalculations } from '../../../../hooks/useCalculations'
 import { Container, RadioBox, RadioBoxContainer } from './style'
 
 export default function PhysicalActivityRadioBox() {
-  const [physicalActivityType, setPhysicalActivityType] = useState('moderate')
+  const { physicalActivityType, setPhysicalActivityType } = useCalculations()
 
   return (
     <Container>

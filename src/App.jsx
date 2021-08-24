@@ -1,6 +1,7 @@
 import React from 'react'
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
 import Calculator from './pages/Calculator'
+import CalculationCompleted from './pages/CalculationCompleted'
 
 import { CalculationsProvider } from './hooks/useCalculations'
 
@@ -13,6 +14,9 @@ function App() {
         <Switch>
           <Route exact path="/">
             <Calculator />
+          </Route>
+          <Route path="/finished">
+            <CalculationCompleted />
           </Route>
         </Switch>
       </Router>

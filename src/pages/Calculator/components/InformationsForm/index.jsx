@@ -13,7 +13,7 @@ export default function InformationsForm() {
           onChange={e =>
             setInformationsFormData({
               ...informationsFormData,
-              age: Number(e.target.value)
+              age: e.target.value
             })
           }
           value={informationsFormData.age || ''}
@@ -43,7 +43,7 @@ export default function InformationsForm() {
           onChange={e =>
             setInformationsFormData({
               ...informationsFormData,
-              weight: Number(e.target.value)
+              weight: e.target.value
             })
           }
           value={informationsFormData.weight || ''}

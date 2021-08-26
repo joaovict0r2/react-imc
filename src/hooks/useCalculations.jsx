@@ -14,7 +14,6 @@ export function CalculationsProvider({ children }) {
     informationsFormProps
   )
   const [physicalActivityType, setPhysicalActivityType] = useState('moderate')
-  const [imc, setImc] = useState(0)
 
   return (
     <CalculationsContext.Provider
@@ -25,8 +24,6 @@ export function CalculationsProvider({ children }) {
         setInformationsFormData,
         physicalActivityType,
         setPhysicalActivityType,
-        setImc,
-        imc,
         history
       }}
     >

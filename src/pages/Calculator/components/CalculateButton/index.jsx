@@ -1,14 +1,10 @@
 import React from 'react'
-import { useHistory } from 'react-router-dom'
 import { useCalculations } from '../../../../hooks/useCalculations'
 import { Button, Container } from './style'
 
-export default function CalculateButton() {
-  const history = useHistory()
-
+export default function CalculateButton({ setHasFinished, setImc }) {
   const {
     informationsFormData,
-    setImc,
     setGenreType,
     setInformationsFormData,
     setPhysicalActivityType
@@ -18,8 +14,9 @@ export default function CalculateButton() {
     const { weight, height } = informationsFormData
 
     const imcCalculation = weight / (height * height)
+    console.log(imcCalculation.toFixed(2))
 
-    setImc(imcCalculation)
+    setImc(imcCalculation.toFixed(2))
 
     setGenreType('women')
     setInformationsFormData({
@@ -28,7 +25,6 @@ export default function CalculateButton() {
       weight: 0
     })
     setPhysicalActivityType('moderate')
-    history.push('/finished')
   }
 
   return (
@@ -36,6 +32,7 @@ export default function CalculateButton() {
       <Button
         onClick={() => {
           handleCalculationButton()
+          setHasFinished(true)
         }}
         type="button"
       >

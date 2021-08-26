@@ -1,27 +1,24 @@
 import React from 'react'
-// import { useCalculations } from '../../hooks/useCalculations'
 import { Container, Content } from './style'
 import { BiArrowBack } from 'react-icons/bi'
-import { useHistory } from 'react-router-dom'
 
-export default function CalculationCompleted() {
-  // const { imc } = useCalculations()
-  const history = useHistory()
-
+export default function CalculationCompleted({ setHasFinished, imc }) {
   const text = '< 18.5'
   const text2 = '> 30'
 
   function imcText(imc) {
     if (imc < 18.5) {
       return `🤔 Opa, seu IMC é ${imc} kg/m2 e você está abaixo do peso normal!`
-    } else if (imc === 18.5 && imc < 24.9) {
+    } else if (imc >= 18.5 && imc < 24.9) {
       return `🎉 Parabéns, seu IMC é ${imc} kg/m2 e você está dentro do peso adequado!`
-    } else if (imc === 24.9 && imc < 30) {
+    } else if (imc >= 24.9 && imc < 30) {
       return `🤔 Opa, seu IMC é ${imc} kg/m2 e você está com o peso acima do normal!`
     } else if (imc > 30) {
       return `😢 Coe meu mano, seu IMC é ${imc} kg/m2 e você está com o peso muito acima do peso normal!`
     }
   }
+
+  const newImc = Number(imc)
 
   return (
     <Container>
@@ -29,11 +26,11 @@ export default function CalculationCompleted() {
         <div style={{ display: 'flex', alignItems: 'center' }}>
           <BiArrowBack
             style={{ marginRight: '10px', color: '#363f5f', cursor: 'pointer' }}
-            onClick={history.push('/')}
+            onClick={() => setHasFinished(false)}
           />
           <h3>RESULTADO:</h3>
         </div>
-        <p style={{ marginTop: '10px' }}>{imcText(28.8)}</p>
+        <p style={{ marginTop: '10px' }}>{imcText(newImc)}</p>
         <hr style={{ margin: '10px 0' }} />
         <table>
           <thead>

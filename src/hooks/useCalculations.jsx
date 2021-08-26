@@ -2,18 +2,11 @@ import React, { createContext, useContext, useState } from 'react'
 
 const CalculationsContext = createContext()
 
-const informationsFormProps = {
-  age: 0,
-  height: 0,
-  weight: 0
-}
-
 export function CalculationsProvider({ children }) {
   const [genreType, setGenreType] = useState('women')
-  const [informationsFormData, setInformationsFormData] = useState(
-    informationsFormProps
-  )
+  const [informationsFormData, setInformationsFormData] = useState({})
   const [physicalActivityType, setPhysicalActivityType] = useState('moderate')
+  const [inputsElements, setInputsElements] = useState({})
 
   return (
     <CalculationsContext.Provider
@@ -24,7 +17,9 @@ export function CalculationsProvider({ children }) {
         setInformationsFormData,
         physicalActivityType,
         setPhysicalActivityType,
-        history
+        history,
+        setInputsElements,
+        inputsElements
       }}
     >
       {children}

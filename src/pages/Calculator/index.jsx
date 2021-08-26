@@ -1,8 +1,6 @@
 import React, { useState } from 'react'
-import CalculateButton from './components/CalculateButton'
 import GenreRadioBox from './components/GenreRadioBox'
 import InformationsForm from './components/InformationsForm'
-import PhysicalActivityRadioBox from './components/PhysicalActivityRadioBox'
 import CalculationCompleted from '../CalculationCompleted'
 import { Container, Content } from './style'
 
@@ -18,9 +16,7 @@ export default function Calculator() {
         <Container>
           <Content>
             <GenreRadioBox />
-            <InformationsForm />
-            <PhysicalActivityRadioBox />
-            <CalculateButton setHasFinished={setHasFinished} setImc={setImc} />
+            <InformationsForm setHasFinished={setHasFinished} setImc={setImc} />
           </Content>
         </Container>
       )}

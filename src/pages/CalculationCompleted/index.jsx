@@ -26,7 +26,7 @@ export default function CalculationCompleted({ setHasFinished, imc }) {
         <div style={{ display: 'flex', alignItems: 'center' }}>
           <BiArrowBack
             style={{ marginRight: '10px', color: '#363f5f', cursor: 'pointer' }}
-            onClick={() => setHasFinished(false)}
+            onClick={() => (window.location.href = '/')}
           />
           <h3>RESULTADO:</h3>
         </div>

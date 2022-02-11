@@ -2,6 +2,8 @@
 
 Nesse projeto foi realizado uma calculadora de Índice de Massa Corpórea (IMC), com o objetivo de aprimorar meus conhecimentos e aplicar novas tecnicas e metodologias.
 
+Live Demo: https://react-imc.vercel.app/
+
 ## 🚀 Tecnologias e libs Utilizadas
 <ul>
   <li>ReactJS</li>
